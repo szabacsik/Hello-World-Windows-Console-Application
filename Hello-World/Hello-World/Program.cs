@@ -6,15 +6,33 @@ namespace Hello_World
     {
         static void Main(string[] args)
         {
-            Hello hello = new Hello();
+            User user = new User();
+            Hello hello = new Hello(user.Name);
         }
     }
 
     public class Hello
     {
-        static Hello()
+        public Hello(string who)
         {
-            Console.WriteLine("Hello World");
+            Console.WriteLine("Hello {0}", who);
+        }
+    }
+
+    public class User
+    {
+        //private static string Name;
+        static User()
+        {
+            //Name = Environment.UserName;
+        }
+        public string Name
+        {
+            get
+            {
+                return Environment.UserName;
+            }
+            set { }
         }
     }
 }
